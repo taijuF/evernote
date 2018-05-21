@@ -36,10 +36,14 @@ count = note_store.findNoteCounts(note_filter,False)
 num = 0
 for value in count.notebookCounts.values():
     num += value
-print(str(num))
 
-notes_metadata_list = note_store.findNotesMetadata(note_filter, 0, 250, notes_metadata_result_spec)
+MAX = 250
+offset = 0
 
-for metadata in notes_metadata_list.notes:
-    if metadata.attributes.shareDate:
-        note_store.stopSharingNote(metadata.guid)
+while offset < num:
+    print(offset)
+    notes_metadata_list = note_store.findNotesMetadata(note_filter, offset, MAX, notes_metadata_result_spec)
+    for metadata in notes_metadata_list.notes:
+        if metadata.attributes.shareDate:
+            note_store.stopSharingNote(metadata.guid)
+    offset += MAX
