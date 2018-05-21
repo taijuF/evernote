@@ -41,7 +41,6 @@ MAX = 250
 offset = 0
 
 while offset < num:
-    print(offset)
     notes_metadata_list = note_store.findNotesMetadata(note_filter, offset, MAX, notes_metadata_result_spec)
     for metadata in notes_metadata_list.notes:
         if metadata.attributes.shareDate:
