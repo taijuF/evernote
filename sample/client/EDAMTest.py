@@ -33,7 +33,9 @@ notes_metadata_result_spec = NoteStore.NotesMetadataResultSpec()
 notes_metadata_result_spec.includeAttributes=True
 
 count = note_store.findNoteCounts(note_filter,False)
+
 num = 0
+
 for value in count.notebookCounts.values():
     num += value
 
