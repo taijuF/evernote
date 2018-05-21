@@ -6,7 +6,7 @@ import os
 import evernote.edam.notestore.ttypes as NoteStore
 from evernote.api.client import EvernoteClient
 
-auth_token = "S=s1:U=94a02:E=16ad7eb1198:C=1638039e560:P=1cd:A=en-devtoken:V=2:H=ba095b412871224094c0fa7058904dc9"
+auth_token = ""
 
 if auth_token == "your developer token":
     print("Please fill in your developer token")
